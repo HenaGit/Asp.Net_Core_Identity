@@ -14,7 +14,7 @@ namespace IdentityManager.Controllers
             return View();
         }
         [HttpGet]
-        public async Task<IActionResult> Register()
+        public IActionResult Register()
         {
             RegisterViewModel registerViewModel = new RegisterViewModel();
             return View(registerViewModel);
