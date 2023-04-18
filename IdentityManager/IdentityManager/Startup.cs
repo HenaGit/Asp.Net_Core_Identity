@@ -41,6 +41,10 @@ namespace IdentityManager
                 opt.Lockout.MaxFailedAccessAttempts = 5;
                 opt.SignIn.RequireConfirmedAccount = true;
             });
+            services.ConfigureApplicationCookie(opt =>
+            {
+                opt.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Home/Accessdenied");
+            });
             services.AddAuthentication().AddFacebook(options =>
             {
                 options.AppId = "2797980420437778";
