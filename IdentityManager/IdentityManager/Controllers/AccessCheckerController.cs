@@ -34,7 +34,7 @@ namespace IdentityManager.Controllers
         {
             return View();
         }
-
+        [Authorize(Policy = "Admin")]
         //Accessible by users who have admin role
         public IActionResult AdminAccess()
         {
