@@ -22,9 +22,15 @@ namespace IdentityManager.Controllers
         {
             return View();
         }
-
+        [Authorize(Roles = "User")]
         //Accessible by users who have user role
         public IActionResult UserAccess()
+        {
+            return View();
+        }
+        [Authorize(Roles = "User,Admin")]
+        //Accessible by users who have user role
+        public IActionResult UserORAdminAccess()
         {
             return View();
         }
