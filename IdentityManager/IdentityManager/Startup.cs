@@ -39,7 +39,7 @@ namespace IdentityManager
                 opt.Password.RequireLowercase = true;
                 opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromSeconds(30);
                 opt.Lockout.MaxFailedAccessAttempts = 5;
-                opt.SignIn.RequireConfirmedAccount = true;
+                opt.SignIn.RequireConfirmedAccount = false;
             });
             services.ConfigureApplicationCookie(opt =>
             {
@@ -51,6 +51,7 @@ namespace IdentityManager
                 options.AppSecret = "abe6f05cc42cb58fef1e689b54a04011";
             });
             services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -78,6 +79,7 @@ namespace IdentityManager
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }
