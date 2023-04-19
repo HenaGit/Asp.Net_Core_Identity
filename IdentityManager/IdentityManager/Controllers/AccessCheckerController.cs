@@ -64,5 +64,9 @@ namespace IdentityManager.Controllers
         {
             return View();
         }
+        public IActionResult OnlyHenok()
+        {
+            return View();
+        }
     }
 }
